@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Iniciar Sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding fade-in">
+  <ion-input
+    placeholder="Ingresa tu nombre"
+    [(ngModel)]="nombreUsuario"
+    fill="outline"
+    label="Usuario"
+    label-placement="floating"
+    clear-input="true">
+  </ion-input>
+
+  <ion-button expand="block" color="success" class="ion-margin-top" (click)="entrar()">
+    Entrar
+  </ion-button>
+</ion-content>

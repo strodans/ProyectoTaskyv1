@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Mis Tareas
+      <span style="float: right; font-size: 14px;">Bienvenido, {{ nombreUsuario }}</span>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding fade-in">
+
+  <ion-input
+    placeholder="Escribe una tarea"
+    [(ngModel)]="nuevaTarea"
+    fill="outline"
+    label="Tarea nueva"
+    label-placement="floating"
+    clear-input="true">
+  </ion-input>
+
+  <ion-button expand="block" color="primary" class="ion-margin-top" (click)="agregarTarea()">
+    Agregar Tarea
+  </ion-button>
+
+  <ion-list class="ion-margin-top">
+    <ion-item *ngFor="let tarea of listaTareas; let i = index">
+      <ion-label>{{ tarea }}</ion-label>
+      <ion-button fill="clear" color="danger" slot="end" (click)="eliminarTarea(i)">
+        Eliminar
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" color="medium" (click)="irAConfiguracion()" class="ion-margin-top">
+    Configuración
+  </ion-button>
+
+  <ion-button expand="block" color="medium" (click)="irAAcerca()" class="ion-margin-top">
+    Acerca de
+  </ion-button>
+
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Configuración</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding fade-in">
+
+  <ion-item>
+    <ion-label>Notificaciones</ion-label>
+    <ion-toggle [(ngModel)]="notificaciones" (ionChange)="guardarPreferencias()"></ion-toggle>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Modo Oscuro</ion-label>
+    <ion-toggle [(ngModel)]="modoOscuro" (ionChange)="aplicarModoOscuro()"></ion-toggle>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label>Guardar en local</ion-label>
+    <ion-toggle [(ngModel)]="guardarLocal" (ionChange)="guardarPreferencias()"></ion-toggle>
+  </ion-item>
+
+  <ion-button expand="block" color="medium" (click)="volverAtras()">Volver atrás</ion-button>
+  <ion-button expand="block" color="primary" (click)="volverAlInicio()">Volver al inicio</ion-button>
+
+</ion-content>

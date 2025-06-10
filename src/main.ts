@@ -5,6 +5,12 @@ import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalo
 import { routes } from './app/app.routes';
 import { AppComponent } from './app/app.component';
 
+const modoGuardado = localStorage.getItem('modoOscuro');
+if (modoGuardado === 'false') {
+  document.body.classList.add('modo-claro');
+}
+
+
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
